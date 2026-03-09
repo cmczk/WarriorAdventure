@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour
     void MovePlayer()
     {
         var direction = moveAction.ReadValue<Vector2>();
-        var movement = new Vector3(direction.x, direction.y) * speed * Time.deltaTime;
+        var movement = speed * Time.deltaTime * new Vector3(direction.x, direction.y);
         transform.position += movement;
     }
 }
